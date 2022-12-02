@@ -1,33 +1,33 @@
 <template>
   <footer class="footer">
       <div class="container">
-        <div class="footer__nav">
-          <div class="nav-wrapper">
-            <h6 class="footer__title">Покупателям</h6>
-            <ul class="footer__list">
-              <li class="footer__item"><a href="">Каталог</a></li>
-              <li class="footer__item"><a href="">Акции</a></li>
-              <li class="footer__item"><a href="">Бренды</a></li>
+        <div class="nav">
+          <div>
+            <h6 class="title">Покупателям</h6>
+            <ul class="list">
+              <li class="item"><a href="">Каталог</a></li>
+              <li class="item"><a href="">Акции</a></li>
+              <li class="item"><a href="">Бренды</a></li>
             </ul>
           </div>
 
           <div>
-            <h6 class="footer__title">О нас</h6>
-            <ul class="footer__list">
-              <li><a href="">О компании</a></li>
-              <li><a href="">Новости</a></li>
-              <li><a href="">Команда</a></li>
+            <h6 class="title">О нас</h6>
+            <ul class="list">
+              <li class="item"><a href="">О компании</a></li>
+              <li class="item"><a href="">Новости</a></li>
+              <li class="item"><a href="">Команда</a></li>
             </ul>
           </div>
         </div>
 
-        <div class="footer__sale">
-          <h6 class="footer__title">Узнайте первыми о новинках и акциях</h6>
+        <div class="sale">
+          <h6 class="title">Узнайте первыми о новинках и акциях</h6>
           <form
                 action="https://vuejs.org/"
                 method="post"
-                class="footer__form">
-            <img @click="resetMail" src="./../assets/close.svg">
+                class="form">
+            <img @click="resetMail" src="../assets/icons/close.svg">
             <input type="email" v-model="email" name="email" placeholder="Адрес электронной почты" formnovalidate/>
             <button type="submit">Подписаться</button>
           </form>
@@ -61,7 +61,7 @@ export default ({
     display: block;
   }
 
-  &__nav {
+  .nav {
     color: #333333;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -74,7 +74,7 @@ export default ({
 
   }
 
-  &__title {
+  .title {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.04em;
@@ -82,7 +82,7 @@ export default ({
     margin-bottom: 16px;
   }
 
-  &__list {
+  .list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -93,7 +93,7 @@ export default ({
     gap: 8px;
   }
 
-  &__item {
+  .item {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.04em;
@@ -107,11 +107,11 @@ export default ({
     }
   }
 
-  &__sale {
+  .sale {
     margin-left: auto;
   }
 
-  &__form {
+  .form {
     width: 100%;
     position: relative;
     margin-top: 10px;
@@ -169,33 +169,33 @@ export default ({
   }
 
   @media screen and (max-width: $breakpoint-sm) {
-    &__nav {
+    .nav {
       gap: 100px;
     }
   }
 
-  @media screen and (max-width: $breakpoint-xs) {
-    &__nav {
+  @media screen and (max-width: $breakpoint-xxs) {
+    .nav {
       gap: 50px;
     }
   }
 
   @media screen and (max-width: 400px) {
-    &__nav {
+    .nav {
       gap: 0;
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between;
     }
 
-    &__body {
+    .body {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
     }
 
-    &__sale {
+    .sale {
       margin-top: 38px;
       margin-left: 0;
       width: 100%;
