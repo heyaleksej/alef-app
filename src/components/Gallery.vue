@@ -15,7 +15,6 @@ export default {
   components: {
     GalleryItem
   },
-  imgNames: ['img01', 'img02', 'img03', 'img04', 'img05'],
   photos: [
     "img01.png",
     "img02.png",
