@@ -11,17 +11,9 @@
 import GalleryItem from "@/components/GalleryItem";
 
 export default {
-  name: 'App',
   components: {
     GalleryItem
-  },
-  photos: [
-    "img01.png",
-    "img02.png",
-    "img03.png",
-    "img04.png",
-    "img05.png",
-  ]
+  }
 }
 </script>
 
