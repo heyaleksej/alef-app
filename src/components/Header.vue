@@ -14,13 +14,18 @@
           <img src="../assets/icons/cart-header.svg"/>
         </a>
         <a id="burgerMenu">
-          <button class="burgerMenu__btn icon" v-on:click="navOpen=!navOpen" v-bind:class="{active:navOpen}">
+          <button class="burgerMenu__btn icon"
+                  v-on:click="navOpen=!navOpen"
+                  v-bind:class="{active:navOpen}"
+                  tabindex="0"
+                  @blur="navOpen=false">
             <span class="top"></span>
             <span class="mid"></span>
             <span class="bottom"></span>
           </button>
           <transition name="translateX">
-            <nav v-show="navOpen">
+            <nav v-show="navOpen"
+                 >
               <div class="burgerMenu__wrapper">
                 <ul class="burgerMenu__list container">
                   <li class="burgerMenu__item"><a href="">постельное белье</a></li>
