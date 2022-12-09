@@ -42,8 +42,6 @@ const photos = [
 
 
 .photos {
-  margin-bottom: 100px;
-
   &__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -52,8 +50,10 @@ const photos = [
     grid-auto-rows: auto;
     gap: 10px;
     justify-content: center;
+
     @media screen and (max-width: $breakpoint-sm) {
       grid-template-columns: unset;
+      margin-bottom: 20px;
 
     }
   }
@@ -67,7 +67,6 @@ const photos = [
 
   &__main-photo {
     position: relative;
-    max-width: 611px;
     max-height: 611px;
 
     img {
@@ -197,33 +196,5 @@ const photos = [
       }
     }
   }
-
-
-  @media screen and (max-width: 768px) {
-    &__body {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &__body {
-      gap: 8px;
-    }
-
-    &__all {
-      gap: 8px;
-    }
-
-    &__styles {
-      margin: 58px 0;
-    }
-
-    & {
-      margin-bottom: 30px;
-    }
-  }
-
 }
 </style>

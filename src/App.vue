@@ -1,29 +1,26 @@
 <template>
   <Header />
+  <Content />
+  <Gallery />
+  <Footer />
 </template>
 
 <script>
 
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Gallery from "@/components/Gallery"
+import Content from "@/components/Content";
 
 export default {
   name: 'App',
   components: {
-    Header
+    Content,
+    Header,
+    Footer,
+    Gallery,
   }
 }
+
 </script>
 
-<style>
-#app {
-  overflow: hidden;
-  min-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-</style>

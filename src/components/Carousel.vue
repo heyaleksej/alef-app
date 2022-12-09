@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper ">
     <div class="wrapper-main">
       <img :src="require(`../assets/img/` + productPhoto)"
            :key="productPhoto" alt="Фото с товаром"/>
@@ -24,6 +24,7 @@ export default {
     return {
       productPhoto: "img06.png",
       photos: [
+        "img06.png",
         "img07.png",
         "img08.png",
         "img09.png",
@@ -42,12 +43,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "./src/assets/styles/variables";
+
 .wrapper {
   position: relative;
+  width: 50%;
 
   &-main {
     overflow: hidden;
-    width: 686px;
     height: auto;
 
     img {
@@ -55,6 +58,7 @@ export default {
       height: 100%;
       -o-object-fit: cover;
       object-fit: cover;
+
     }
   }
 
@@ -92,6 +96,138 @@ export default {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 3vh;
+  }
+}
+//tablets
+@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  .wrapper {
+    width: 100%;
+    &-main {
+      min-height: 530px;
+    }
+
+    &-item {
+      z-index: 2;
+      width: 50px;
+      height: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      cursor: pointer;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 1s;
+
+      &:hover,
+      &:active {
+        opacity: 0.6;
+      }
+    }
+
+    &-mini {
+      position: absolute;
+      top: 3%;
+      left: 3%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 3vh;
+    }
+  }
+}
+
+//mobile
+@media screen and (min-width: 300px) and (max-width: $breakpoint-sm) {
+  .wrapper {
+    width: 100%;
+    &-main {
+    min-height: 530px;
+    }
+
+    &-item {
+      z-index: 2;
+      width: 50px;
+      height: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      cursor: pointer;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 1s;
+
+      &:hover,
+      &:active {
+        opacity: 0.6;
+      }
+    }
+
+    &-mini {
+      position: absolute;
+      top: 3%;
+      left: 3%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 3vh;
+    }
+  }
+}
+
+//iphone se, galaxy fold(low res)
+@media screen and (max-width: 321px) {
+  .wrapper {
+    width: 100%;
+    &-main {
+    min-height: 330px;
+    }
+
+    &-item {
+      z-index: 2;
+      width: 40px;
+      height: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      cursor: pointer;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 1s;
+
+    }
+    &-mini {
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 1vh;
+    }
   }
 }
 

@@ -1,8 +1,9 @@
 <template>
   <section class="product">
-    <div class="container">
+    <div class="container container__photo">
       <div class="product__body">
         <Carousel/>
+        <ProductInfo/>
       </div>
     </div>
   </section>
@@ -10,10 +11,12 @@
 
 <script>
 import Carousel from "@/components/Carousel";
+import ProductInfo from "@/components/ProductInfo";
 
 export default {
   name: "Content",
   components: {
+    ProductInfo,
     Carousel
   }
 }
@@ -22,8 +25,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.product {
+@import "./src/assets/styles/variables";
 
+
+.product {
   margin-top: 70px;
 
   &__body {
@@ -31,6 +36,11 @@ export default {
     display: -ms-flexbox;
     display: flex;
     gap: 30px;
+    width: 100%;
+    @media screen and (max-width: $breakpoint-sm) {
+      display: block;
+      gap: 10px;
+    }
   }
 }
 

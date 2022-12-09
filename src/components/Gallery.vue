@@ -1,8 +1,8 @@
 <template>
-  <div class="photos">
-    <div class="container__main">
+  <div class="wrapper container__photo">
+    <div class="photos">
       <a href="" class="photos__styles">Посмотреть все стили</a>
-        <GalleryItem/>
+      <GalleryItem/>
     </div>
   </div>
 </template>
@@ -18,24 +18,39 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "./src/assets/styles/variables";
 
-.photos {
-  margin-bottom: 100px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
 
-  &__styles {
-    font-size: 14px;
-    line-height: 20px;
-    -webkit-text-decoration-line: underline;
-    text-decoration-line: underline;
-    color: #333333;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-    margin: 28px 0;
 
-    &:hover,
-    &:active {
-      opacity: 0.7;
+  .photos {
+    margin-bottom: 100px;
+    @media screen and (max-width: $breakpoint-sm) {
+      margin-bottom: 20px;
+    }
+
+    &__styles {
+      font-size: 14px;
+      line-height: 20px;
+      -webkit-text-decoration-line: underline;
+      text-decoration-line: underline;
+      color: #333333;
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      justify-content: center;
+      margin: 28px 0;
+      @media screen and (max-width: $breakpoint-sm) {
+        justify-content: center;
+        display: flex;
+        margin: 28px 0;
+      }
+
+      &:hover,
+      &:active {
+        opacity: 0.7;
+      }
     }
   }
 }

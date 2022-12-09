@@ -1,38 +1,38 @@
 <template>
-  <footer class="footer">
-      <div class="container">
-        <div class="nav">
-          <div>
-            <h6 class="title">Покупателям</h6>
-            <ul class="list">
-              <li class="item"><a href="">Каталог</a></li>
-              <li class="item"><a href="">Акции</a></li>
-              <li class="item"><a href="">Бренды</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h6 class="title">О нас</h6>
-            <ul class="list">
-              <li class="item"><a href="">О компании</a></li>
-              <li class="item"><a href="">Новости</a></li>
-              <li class="item"><a href="">Команда</a></li>
-            </ul>
-          </div>
+  <footer class="container">
+    <div class="footer">
+      <div class="nav">
+        <div>
+          <h6 class="title">Покупателям</h6>
+          <ul class="list">
+            <li class="item"><a href="">Каталог</a></li>
+            <li class="item"><a href="">Акции</a></li>
+            <li class="item"><a href="">Бренды</a></li>
+          </ul>
         </div>
 
-        <div class="sale">
-          <h6 class="title">Узнайте первыми о новинках и акциях</h6>
-          <form
-                action="https://vuejs.org/"
-                method="post"
-                class="form">
-            <img @click="resetMail" src="../assets/icons/close.svg">
-            <input type="email" v-model="email" name="email" placeholder="Адрес электронной почты" formnovalidate/>
-            <button type="submit">Подписаться</button>
-          </form>
+        <div>
+          <h6 class="title">О нас</h6>
+          <ul class="list">
+            <li class="item"><a href="">О компании</a></li>
+            <li class="item"><a href="">Новости</a></li>
+            <li class="item"><a href="">Команда</a></li>
+          </ul>
         </div>
       </div>
+
+      <div class="mail">
+        <h6 class="title">Узнайте первыми о новинках и акциях</h6>
+        <form
+            action="https://vuejs.org/"
+            method="post"
+            class="form">
+          <img @click="resetMail" src="../assets/icons/close.svg">
+          <input type="email" v-model="email" name="email" placeholder="Адрес электронной почты" formnovalidate/>
+          <button type="submit">Подписаться</button>
+        </form>
+      </div>
+    </div>
   </footer>
 </template>
 
@@ -57,7 +57,10 @@ export default ({
 .footer {
   margin-bottom: 20px;
   margin-top: auto;
-  @media screen and (max-width: $breakpoint-xxs) {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  @media screen and (max-width: $breakpoint-md) {
     display: block;
   }
 
@@ -115,6 +118,9 @@ export default ({
     width: 100%;
     position: relative;
     margin-top: 10px;
+    @media screen and (max-width: $breakpoint-sm) {
+      padding-bottom: 20px;
+    }
 
     img {
       position: absolute;
@@ -127,7 +133,7 @@ export default ({
 
       &:hover,
       &:active {
-      transform: rotate(90deg);
+        transform: rotate(90deg);
       }
     }
 
@@ -160,6 +166,7 @@ export default ({
       line-height: 20px;
       margin-left: auto;
 
+
       &:hover,
       &:active {
         background: #333333;
@@ -168,40 +175,19 @@ export default ({
     }
   }
 
+
   @media screen and (max-width: $breakpoint-sm) {
     .nav {
-      gap: 100px;
-    }
-  }
-
-  @media screen and (max-width: $breakpoint-xxs) {
-    .nav {
       gap: 50px;
-    }
-  }
-
-  @media screen and (max-width: 400px) {
-    .nav {
-      gap: 0;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
+      justify-content: left;
     }
 
-    .body {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-    }
-
-    .sale {
+    .mail {
       margin-top: 38px;
       margin-left: 0;
       width: 100%;
     }
   }
-
 }
 
 </style>
