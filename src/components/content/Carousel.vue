@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper ">
     <div class="wrapper-main">
-      <img :src="require(`../assets/img/` + productPhoto)"
-           :key="productPhoto" alt="Фото с товаром"/>
+      <img :src="require(`../../assets/img/` + productPhoto)"
+           :key="productPhoto" alt="Фото товара"/>
     </div>
 
     <div class="wrapper-mini">
@@ -10,9 +10,9 @@
            :id="idx"
            :key="item"
            @click="changePhoto($event)"
-           :src="require(`../assets/img/` + item)"
+           :src="require(`../../assets/img/` + item)"
            class="wrapper-item"
-           alt="Фото с товаром">
+           alt="Фото товара">
     </div>
   </div>
 </template>
@@ -35,15 +35,15 @@ export default {
 
   methods: {
     changePhoto: function (event) {
-      let targetId = event.currentTarget.id;
-      this.productPhoto = this.photos[targetId];
+      let idf = event.currentTarget.id;
+      this.productPhoto = this.photos[idf];
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-@import "./src/assets/styles/variables";
+@import "../../assets/styles/variables";
 
 .wrapper {
   position: relative;
@@ -58,7 +58,6 @@ export default {
       height: 100%;
       -o-object-fit: cover;
       object-fit: cover;
-
     }
   }
 
@@ -99,11 +98,10 @@ export default {
   }
 }
 //tablets
-@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-lg) {
   .wrapper {
-    width: 100%;
     &-main {
-      min-height: 530px;
+      min-height: 430px;
     }
 
     &-item {
@@ -122,10 +120,6 @@ export default {
       -o-transition: all 0.3s;
       transition: all 1s;
 
-      &:hover,
-      &:active {
-        opacity: 0.6;
-      }
     }
 
     &-mini {

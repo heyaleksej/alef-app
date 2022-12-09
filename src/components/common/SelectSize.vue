@@ -67,9 +67,8 @@ export default {
   align-items: center;
   padding-right: 20px;
 
-
   img {
-    transition: all 0.5s ease;
+    transition: all 0.8s ease;
   }
 }
 

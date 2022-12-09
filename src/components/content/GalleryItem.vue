@@ -6,16 +6,16 @@
          :class="[idx === 0 ? 'photos__main': 'photos__all']"
     >
       <a href="" :class="[idx === 0 ? 'photos__main-photo': 'photos__item']">
-        <img :src="require(`../assets/img/` + item)" :alt="'photo'">
+        <img :src="require(`../../assets/img/` + item)" :alt="'photo'">
         <div class="photos__hover">
-          <img src="../assets/icons/show-more.svg" class="photos__slides" alt="photo">
-          <div class="photos__center">
+          <img src="../../assets/icons/show-more.svg" class="photos__el" alt="photo">
+          <div class="photos__pos">
             <div class="photos__cart">
-              <img src="../assets/icons/cart.svg" alt="cart">
+              <img src="../../assets/icons/cart.svg" alt="cart">
               <p>Узнай, что на мне</p>
             </div>
             <div class="photos__like">
-              <img src="../assets/icons/like.svg" alt="like">
+              <img src="../../assets/icons/like.svg" alt="like">
               <p>200</p>
             </div>
           </div>
@@ -38,7 +38,7 @@ const photos = [
 </script>
 
 <style scoped lang="scss">
-@import "./src/assets/styles/variables";
+@import "../../assets/styles/variables";
 
 
 .photos {
@@ -94,13 +94,13 @@ const photos = [
     font-size: 14px;
     line-height: 20px;
     color: white;
-    z-index: 20;
+    z-index: 33;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 
     &:hover,
     &:active {
@@ -108,7 +108,7 @@ const photos = [
     }
   }
 
-  &__slides {
+  &__el {
     position: absolute;
     width: 16px;
     height: 16px;
@@ -116,23 +116,24 @@ const photos = [
     right: 16px;
   }
 
-  &__center {
+  &__pos {
     text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     z-index: 3;
-    height: 100%;
 
     img {
       width: 48px;
@@ -182,17 +183,17 @@ const photos = [
     margin-top: auto;
 
     img {
-      -webkit-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
       margin-right: 6px;
       max-height: 16px;
       max-width: 16px;
 
       &:hover {
-        -webkit-transform: scale(1.3, 1.3);
-        -ms-transform: scale(1.3, 1.3);
-        transform: scale(1.3, 1.3);
+        -webkit-transform: scale(1.4, 1.4);
+        -ms-transform: scale(1.4, 1.4);
+        transform: scale(1.4, 1.4);
       }
     }
   }

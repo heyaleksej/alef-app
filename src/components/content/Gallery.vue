@@ -1,14 +1,14 @@
 <template>
   <div class="wrapper container__photo">
     <div class="photos">
-      <a href="" class="photos__styles">Посмотреть все стили</a>
+      <a href="" class="photos__position">Посмотреть все стили</a>
       <GalleryItem/>
     </div>
   </div>
 </template>
 
 <script>
-import GalleryItem from "@/components/GalleryItem";
+import GalleryItem from "@/components/content/GalleryItem";
 
 export default {
   components: {
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./src/assets/styles/variables";
+@import "../../assets/styles/variables";
 
 .wrapper {
   display: flex;
@@ -31,7 +31,7 @@ export default {
       margin-bottom: 20px;
     }
 
-    &__styles {
+    &__position {
       font-size: 14px;
       line-height: 20px;
       -webkit-text-decoration-line: underline;

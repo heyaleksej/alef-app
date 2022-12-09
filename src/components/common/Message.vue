@@ -15,8 +15,8 @@
 <script>
 export default {
   name: "Message",
-  props:{
-    infoMessage:{}
+  props: {
+    infoMessage: {}
   }
 }
 </script>
@@ -32,11 +32,11 @@ export default {
 }
 
 
-.wrapper{
+.wrapper {
   display: flex;
 }
 
-.none{
+.none {
   display: none;
 }
 
@@ -47,7 +47,7 @@ export default {
   justify-content: center;
   padding: 15px;
   margin: 0;
-  @media screen and (max-width: 300px){
+  @media screen and (max-width: 300px) {
     font-size: 12px;
 
   }
@@ -68,10 +68,11 @@ export default {
   position: relative;
   background: white;
   border: 1px solid #333333;
-  @media screen and (max-width: 560px){
+  @media screen and (max-width: 560px) {
     width: 100%;
   }
 }
+
 .bar {
   position: absolute;
   width: 5rem;
@@ -112,23 +113,15 @@ export default {
   left: -2.8rem;
   transform: rotate(90deg);
 }
-
+//animation
 @-webkit-keyframes h-move {
-  0% {
-    left: -0.5rem;
-  }
-  100% {
-    left: 20rem;
-  }
+  0% {left: -0.5rem;}
+  100% {left: 20rem;}
 }
 
 @keyframes h-move {
-  0% {
-    left: -0.5rem;
-  }
-  100% {
-    left: 20rem;
-  }
+  0% {left: -0.5rem;}
+  100% {left: 20rem;}
 }
 
 .top,
@@ -138,21 +131,13 @@ export default {
 }
 
 @-webkit-keyframes v-move {
-  0% {
-    top: -0.5rem;
-  }
-  100% {
-    top: 22.8rem;
-  }
+  0% {top: -0.5rem;}
+  100% {top: 22.8rem;}
 }
 
 @keyframes v-move {
-  0% {
-    top: -0.5rem;
-  }
-  100% {
-    top: 22.8rem;
-  }
+  0% {top: -0.5rem;}
+  100% {top: 22.8rem;}
 }
 
 .right,

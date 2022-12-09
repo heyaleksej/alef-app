@@ -11,7 +11,7 @@
           <img src="../assets/icons/heart.svg"/>
         </a>
         <a href="/" class="icon">
-          <img src="./../assets/cart.svg"/>
+          <img src="../assets/icons/cart-header.svg"/>
         </a>
         <a id="burgerMenu">
           <button class="burgerMenu__btn icon" v-on:click="navOpen=!navOpen" v-bind:class="{active:navOpen}">

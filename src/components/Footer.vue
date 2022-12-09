@@ -74,6 +74,10 @@ export default ({
     justify-content: space-between;
     gap: 200px;
     margin-bottom: 40px;
+    @media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-lg) {
+     gap: 100px;
+    }
+
 
   }
 
@@ -175,7 +179,7 @@ export default ({
     }
   }
 
-
+//mobile
   @media screen and (max-width: $breakpoint-sm) {
     .nav {
       gap: 50px;

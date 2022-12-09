@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import Carousel from "@/components/Carousel";
-import ProductInfo from "@/components/ProductInfo";
+import Carousel from "@/components/content/Carousel";
+import ProductInfo from "@/components/content/ProductInfo";
 
 export default {
   name: "Content",
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./src/assets/styles/variables";
+@import "../../assets/styles/variables";
 
 
 .product {

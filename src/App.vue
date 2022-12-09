@@ -9,8 +9,8 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Gallery from "@/components/Gallery"
-import Content from "@/components/Content";
+import Gallery from "@/components/content/Gallery"
+import Content from "@/components/content/Content";
 
 export default {
   name: 'App',

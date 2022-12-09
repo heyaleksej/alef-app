@@ -1,12 +1,12 @@
 <template>
-  <div class="right">
+  <div class="info">
     <h1 class="title">{{ productTitle }}</h1>
-    <p class="article">Арт. 02194/05</p>
+    <p class="code">Арт. 02194/05</p>
     <a href="" class="reviews">
       <div>Отзывы</div>
       <Rating/>
       255 отзывов
-      <img class="angle" :src="require(`../assets/icons/arrow.svg`)" alt="arrow">
+      <img class="angle" :src="require(`@/assets/icons/arrow.svg`)" alt="arrow">
     </a>
 
     <div class="price">
@@ -14,7 +14,7 @@
       <div class="price-old">1 500 ₽</div>
 
       <a href="">
-        <img class="angle" :src="require(`../assets/icons/arrow.svg`)" alt="arrow">
+        <img class="angle" :src="require(`@/assets/icons/arrow.svg`)" alt="arrow">
       </a>
     </div>
 
@@ -30,18 +30,18 @@
     <div class="add-cart">
       <div class="add-cart-quantity">
         <div class="add-cart-change" @click="increment">
-          <img :src="require(`../assets/icons/plus.svg`)" alt="plus">
+          <img :src="require(`@/assets/icons/plus.svg`)" alt="plus">
         </div>
         <div class="add-cart-total">{{ quantity }}</div>
         <div class="add-cart-change" @click="decrement">
-          <img :src="require(`../assets/icons/minus.svg`)" alt="minus">
+          <img :src="require(`@/assets/icons/minus.svg`)" alt="minus">
         </div>
       </div>
 
       <button type="button" class="add-cart-cart black-btn" @click="addToCart">Добавить в корзину</button>
 
       <button type="button" class="add-cart-fav black-btn" @click="addToFavorite">
-        <img :src="require(`../assets/icons/whiteheart.svg`)" alt="fav">
+        <img :src="require(`@/assets/icons/white-heart.svg`)" alt="fav">
       </button>
     </div>
 
@@ -51,13 +51,13 @@
 
     <div class="links">
       <a href="" class="underlined">
-        <img src="../assets/icons/t-short.svg" alt="Иконка одежды">
+        <img src="../../assets/icons/t-short.svg" alt="Иконка одежды">
         Описание товара</a>
       <a href="" class="underlined">
-        <img src="../assets/icons/time.svg" alt="Иконка часов">
+        <img src="../../assets/icons/time.svg" alt="Иконка часов">
         Доставка и возврат</a>
       <a href="" class="underlined">
-        <img src="../assets/icons/payment.svg" alt="Иконка оплаты">
+        <img src="../../assets/icons/payment.svg" alt="Иконка оплаты">
         Способы оплаты</a>
     </div>
 
@@ -126,14 +126,14 @@ export default {
 
 
 <style scoped lang="scss">
-@import "./src/assets/styles/variables";
+@import "../../assets/styles/variables";
 .angle {
   display: flex;
   transform: rotate(270deg);
   padding-top: 5px;
 }
 
-.right {
+.info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,7 +150,7 @@ export default {
   color: #333333;
 }
 
-.article {
+.code {
   font-size: 12px;
   line-height: 16px;
   margin: 8px 0;
@@ -261,6 +261,7 @@ export default {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 10px;
+  padding-bottom: 15px;
 
   &-quantity {
     max-height: 50px;
@@ -382,7 +383,7 @@ export default {
 
 
   img {
-    -webkit-transition: stroke 0.3s;
+    -webkit-transition: stroke 0.7s;
     -o-transition: stroke 0.7s;
     transition: stroke 0.7s;
     fill: aqua;
@@ -401,46 +402,44 @@ export default {
 }
 
 
-@media screen and (max-width: 1024px) {
-  .buy {
-    margin-top: 0;
-  }
-
-
-  .left-main {
-    width: 100%;
-    height: auto;
-  }
-
-  .add-cart-cart {
-    margin-left: 0;
-  }
-
-}
-
-
-@media screen and (max-width: 768px) {
-
+//tablets
+@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-lg) {
   .line {
-    width: 100vw;
-    margin-left: -20px;
+    width: unset;
+    margin-left: unset;
   }
 
-  .right {
-    max-width: 100%;
-    padding: 0 20px;
+  .info {
+    max-width: 50%;
+    padding: 0 10px;
   }
 
   .add-cart {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-top: 40px;
+    flex-direction: unset;
+    margin-top: 10px;
+    gap: 5px;
+    padding-bottom: 20px;
+    &-quantity{
+      margin-bottom: 20px;
+    }
+  }
+  .black-btn {
+    width: 60%;
+    height: 50px;
+  }
+  .add-cart {
+    &-cart {
+      width: 60%;
+    }
+
+    &-fav {
+      width: 50px;
+    }
   }
 
 }
 
+//mobile
 @media screen and (max-width: $breakpoint-sm) {
 
   .add-cart {
@@ -461,7 +460,7 @@ export default {
     margin-left: -20px;
   }
 
-  .right {
+  .info {
     max-width: 100%;
     padding: 0 20px;
   }
